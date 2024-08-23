@@ -1,0 +1,162 @@
+---
+title: "DAT 401"
+author: "Charles Coonce"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+
+::: {style="text-align: center;"}
+# Statistical Modeling and Inference for Data Science
+:::
+
+::: {style="text-align: center;"}
+## Syllabus
+:::
+
+### Course Learning Outcomes
+
+At the completion of this course, students will be able to:
+
+1.  Explain the difference between type I and type II errors
+2.  Understand the notion of p-value; construct confidence intervals for means and proportions
+3.  Compute bootstrap confidence intervals
+4.  Use Bayes rule to calculate posterior probabilities
+5.  Compute bayesian credible intervals
+6.  Compute fitted curve in simple linear and polynomial regression
+7.  Understand bias-variance tradeoff
+8.  Perform subset selection method to fit a multiple linear regression model
+
+### Course Materials
+
+[Lecture Notes](https://math.la.asu.edu/~samara/StatMod-lectures)
+
+Other useful literature:
+
+1.  [OpenIntro Statistics, edition, by D. Diez, M. Çetinkaya-Rundel & C. Barr](https://leanpub.com/openintro-statistics)
+2.  [An Introduction to Statistical Learning with Applications in R, by G. James, D. Witten, T. Hastie & R. Tibshirani](https://www.statlearning.com/)
+3.  A first course in Probability, 10th edition, by Sheldon Ross; publisher: Pearson, 2020
+
+### Important Dates
+
+::: {style="text-align: center;"}
+| Assignment | Due Date (by 11:59pm AZ time) |
+|------------|-------------------------------|
+| HW1        | Sunday, 09/01/2024            |
+| HW2        | Sunday, 09/08/2024            |
+| HW3        | Saturday, 09/14/2024          |
+| Exam 1     | Sunday, 09/15/2024            |
+| HW4        | Sunday, 09/22/2024            |
+| HW5        | Saturday, 09/28/2024          |
+| Exam 2     | Sunday, 09/29/2024            |
+| HW6        | Sunday, 10/6/2024             |
+| HW7        | Friday, 10/11/2024            |
+| Final Exam | Saturday, 10/12/2024          |
+:::
+
+### Submitting Assignments
+
+Lab assignments and projects should be submitted to the designated area in Canvas. You will work on homework assignments and submit them in [nbgrader](https://mathds.asu.edu/). Do not submit an assignment via email.
+
+Assignment due dates follow Arizona Standard time. Click the following link to access the [Time Converter](http://www.thetimezoneconverter.com/) to ensure you account for the difference in Time Zones. Note: Arizona does not observe daylight savings time.
+
+------------------------------------------------------------------------
+
+::: {style="text-align: center;"}
+## Week 1 - Overview
+:::
+
+In this module we discuss basics of probability, the mathematical background of statistical modeling and inference.
+
+#### Learning Objectives
+
+1.  Understand basic notions of probability theory: sample space, events, probability as a set function
+2.  Understand frequentist and bayesian interpretation of probability
+3.  Calculate probability of various events in finite sample space with equally likely outcomes
+4.  Understand the notion of conditional probability
+5.  Understand Total Probability Formula and Bayes' Formula
+
+#### Lecture Video Notes
+
+<b> 1. M1.1 - Probability </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=q9ac7mdo9p#v1"><img src="https://embed-ssl.wistia.com/deliveries/4e259c2fb1e079258bbdbd8a4beb8f25ad87a2be.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"/></a></p>
+:::
+
+1.  DS involves stochastic (random nature) models
+2.  Fundamental Notions:
+    i.  Outcomes of an experiment of interest
+    ii. Event (Collection of possible outcomes)
+    iii. Sample Space (collection of all possible outcomes)
+    iv. probability (quantifying the level of certainty about an event)
+3.  Classical Definition of Probability
+    i.  if a sample space <b>S</b> is finite and consists of equally likely outcomes
+        a.  the probability of any event <b> $A \subseteq S$ </b> is <b> $P(A) = \frac{\text{Number of outcomes in } (A)}{\text{Number of all outcomes in } (S)}$ </b>
+        b.  Also called <b>cardinality</b> of event A.
+    ii. Infinite Sets are different
+        a.  We use axioms and set operations.
+
+<b> 2. M1.2 - Review of Sets </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=ipca5xa5bt#v1"><img src="https://embed-ssl.wistia.com/deliveries/4c0d34c730b716cba13640917a4355213ae84290.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"/></a></p>
+:::
+
+1.  Complement: $A^C$
+    i.  $x \in A^C \iff x \notin A$ ( and $x \in S$ )
+2.  Union: $A \cup B$
+    i.  $x \in A \cup B \iff$ ( $x \in A$ <b> OR </b> $x \in B$ )
+3.  Intersection: $A \cap B$
+    i.  $x \in A \cap B \iff$ ( $x \in A$ <b> AND </b> $x \in B$ )
+4.  De Morgan's Laws:
+    i.  $( A \cup B )^C = A^C \cap B^C$
+    ii. $( A \cap B)^C = A^C \cup B^C$
+
+<b> 3. M1.3 - Axioms of Probability </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=dffidcqrqy"><img src="https://embed-ssl.wistia.com/deliveries/5cb10d91137f9f011f42ed8fd1c1aaad7747691d.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"/></a></p>
+:::
+
+1.  For any event E, \(0 \leq P(E) \leq 1 \)
+2. \( P(S) = 1 \)
+3. For any countable sequence of Mutually exclusive events \( E_1 \), \( E_2 \), ....
+    i. in other words, \( E_i \cap E_j = 0 \) whenever \( i \neq j \) , Then:
+    
+\[
+P\left(\bigcup_{i=1}^{\infty} E_i\right) = \sum_{i=1}^{\infty} P(E_i)
+\]
+
+4. Notes:
+    i. Adding a dot above the union set notation is meant to suggest the set is disjoint, suggesting we can apply axiom 3's countable additivity. 
+\[
+\dot{\bigcup}_{i=1}^{\infty} E_i
+\]
+    ii. The intersection \( A \cap B \) of two events will be written shortly as \( AB \). So, \( P(AB) \) represents the probability that both events, \( A \) and \( B \) happen.
+5. Properties of Probability
+    i. \( P(0) = 0 \)
+    ii. Let \( A_1, A_2, \dots ,  A_n \) be disjoint sets. Then:
+\[
+P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} P(A_i)
+\]
+    iii. \( P(A^c) = 1 - P(A) \)
+    iv. \( A \subseteq B \mapsto P(A) \leq P(B) \)
+    v. \( P(A \cup B) = P(A) + P(B) - P(AB)\) 
+        - <b>Note:</b> \( P(A \cap\ B) = P(AB)\)
+        
+<b> 4. M1.4 - Interpreting Probability </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=wdgx8w3bhe"><img src="https://embed-ssl.wistia.com/deliveries/7a5a3fe2e561a4d8030295e4ac9fb8b7753e12b1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1.  
+
+
+

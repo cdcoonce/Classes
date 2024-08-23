@@ -169,9 +169,33 @@ P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} P(A_i)
     \[
     \text{An individual judgement / opinion / belief about the probability of occurrence}
     \]
-      
-      
-      
+
+<b> 5. M1.5 - Examples </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=3yfrkwt1er"><img src="https://embed-ssl.wistia.com/deliveries/0cfd46d4246ab06f368dc3321478156003825f5e.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b>Two dice are cast, one is blue and one is red: </b>
+    i. E = sum is 7
+    ii. F = sum is 6
+        a. \(7 = 1 + 6 = 2 + 5 = 3 + 4\)
+        b. \(6 = 1 + 5 = 2 + 4 = 3 + 3\)
+    iii. 36 equally likely outcomes
+    \[ S =\{ (1,1),(1,2),(1,3),(1,4),(1,5),(1,6), \\
+        \quad \; \; (2,1),(2,2),(2,3),(2,4),(2,5),(2,6), \\
+        \qquad \quad . \\
+        \qquad \quad . \\
+        \qquad \quad . \\
+        \qquad \; (6,1),(6,2),(6,3),(6,4),(6,5),(6,6), \}
+    \]
+    iv. E and F are represented by:
+        a. \( E = \{ (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}\)
+        b. \( F = \{ (1,5),(2,4),(3,3),(4,2),(6,1)\}\)
+    v. Their Probabilities are:
+        a. \( P(E) = \frac{|E|}{|S|} = \frac{6}{36} = \frac{1}{6}\)
+        b. \( P(F) = \frac{|F|}{|S|} = \frac{5}{36}\)
+    
       
       
       

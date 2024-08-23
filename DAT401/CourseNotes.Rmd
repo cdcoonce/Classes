@@ -156,7 +156,30 @@ P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} P(A_i)
 <p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=wdgx8w3bhe"><img src="https://embed-ssl.wistia.com/deliveries/7a5a3fe2e561a4d8030295e4ac9fb8b7753e12b1.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
 :::
 
-1.  
+1.  There are multiple ways to interpret probabilities:
+    i. classical probability (only applies for finite sample spaces)
+    \[
+    P(A) = \frac{|A|}{|S|}
+    \]
+    ii. frequentist probability (relative frequency)
+    \[
+    P(A) = \frac{\text{Number of times A occured}}{\text{Number of trials}}
+    \]
+    iii. Bayesian probability (personal judgement)
+    \[
+    \text{An individual judgement / opinion / belief about the probability of occurrence}
+    \]
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
 
 

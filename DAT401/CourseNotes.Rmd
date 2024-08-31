@@ -68,7 +68,7 @@ Assignment due dates follow Arizona Standard time. Click the following link to a
 ------------------------------------------------------------------------
 
 ::: {style="text-align: center;"}
-## Week 1 - Overview
+## Week 1
 :::
 
 In this module we discuss basics of probability, the mathematical background of statistical modeling and inference.
@@ -196,14 +196,301 @@ P\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} P(A_i)
         a. \( P(E) = \frac{|E|}{|S|} = \frac{6}{36} = \frac{1}{6}\)
         b. \( P(F) = \frac{|F|}{|S|} = \frac{5}{36}\)
     
+  <b> 5. M1.6 - Combinatorics </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=uuqimjkeok"><img src="https://embed-ssl.wistia.com/deliveries/c45b7f32a3bcc220eec13ab0dfc64d8b49d38aaf.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b>The Basic Principle of Counting </b>
+    i. You toss a coin and cast a die. How many possible outcomes can happen, where by an outcome we mean combination of face on the top of the coin and number on the top of the die?
+        a. H - 1,2,3,4,5,6
+        b. T - 1,2,3,4,5,6
+        c. 2 possible coin outcomes, and 6 possible die outcomes - \(2 * 6 = 12\) outcomes.
+        d. Generalized to \( n_1 * n_2 * ... n_i = total possible outcomes\)
+    ii. How many ways can we put three people in line so that the order matters?
+        a. permutation - \( 3 * 2 * 1 = 6 \)
+        
+  <b> 5. M1.7 - Combinations </b>
+  
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=uuqimjkeok"><img src="https://embed-ssl.wistia.com/deliveries/c45b7f32a3bcc220eec13ab0dfc64d8b49d38aaf.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b>Binomial Coefficient </b>
+    i. 
+    $$
+    \binom{n}{k} = \frac{n \cdot (n - 1) \cdot \ldots \cdot (n - k + 1)}{k!} =     \frac{n!}{k! (n - k)!}
+    $$
+    ii. <b>Example</b>
+        a. There are 20 elks in a forest that is being observed by zoologists. Of these, 5 elks are tagged and then released. A certain time later 4 of the elks were randomly captured for analysis. What is the probability that exactly 2 of these elks caught are tagged?
+    **Answer:**
+        b. 
+        $$
+        P(\text{exactly 2 are tagged}) = \frac{\binom{5}{2} \cdot                      \binom{15}{2}}{\binom{20}{4}} \approx 0.2167.
+        $$
+        
+  <b> 5. M1.8 - Conditional Probability</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=4wj283vatf"><img src="https://embed-ssl.wistia.com/deliveries/7884828ce6ee172048988c0e102b1b4a182002be.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b>Definition</b>
+    i. Denoted \( P(A|B) \) or probability of \(A\) given \(B\)
+    ii. Another format: 
+    $$
+      P(A|B) = \frac{|A \cap B|}{|B|} = \frac{|A \cap B|}{|B|} = \frac{2}{6} = \frac{1}{3}
+    $$
+        a. this works if \( B \) is finite, but in general that is not the case. So...
+    iii. 
+    $$
+P(A|B) = \frac{|A \cap B|}{|B|} = \frac{\frac{|A \cap B|}{|S|}}{\frac{|B|}{|S|}} = \frac{P(A \cap B)}{P(B)}.
+    $$
+    iv. 
+    $$
+    P(A^c|B) = 1 - P(A|B)
+    $$
+    v. <b>Caution!</b>
+    $$
+    P(A|B^c) \neq 1 - P(A|B)
+    $$
+    vi. <b>If \(A \subseteq B\), then \(AB = A\), and so:</b>
+    $$
+    P(A|B) = \frac{P(A)}{P(B)}
+    $$
+    
+  <b> 5. M1.9 - Conditional Probability</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=vudhbdocod"><img src="https://embed-ssl.wistia.com/deliveries/9d6c25e7cda1f33520b9b0c8b3a5c48bd6eba133.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
       
+1. <b>Examples</b>
+    i. Conditional probability \(P(E_2|E_1)\) is often used when events \(E_1\) and \(E_2\) happen in chronological order, with \(E_1\) appearing first.
+        a. 
+        $$
+        P(E_2 | E_1) = \frac{P(E_1 E_2)}{P(E_1)}.
+        $$
+    ii. From \(P(A|B) = \frac{P(AB)}{P(B)}\), we have
+    $$
+    P(AB) = P(B) \cdot P(A|B).
+    $$
+        a. Here, we used standard notation \(AB\) to mean \(A \cap B\). Because \(AB = BA\), switching the roles of \(A\) and \(B\) in the previous formula, we also get
+        $$
+        P(AB) = P(A) \cdot P(B|A).
+        $$
+        b. Therefore,
+        $$
+        P(A) \cdot P(B|A) = P(AB) = P(B) \cdot P(A|B).
+        $$
+    iii. Applying conditional probability to three sets, we get
+    $$
+    P(ABC) = P(CBA) = P(C|BA) P(BA) = P(C|AB) P(A) P(B|A)
+    $$
+        a. Thus,
+        $$
+        P(ABC) = P(A) P(B|A) P(C|AB)
+        $$
       
+  <b> 5. M1.10 - Total Probability Formula</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=lgabpda8qp"><img src="https://embed-ssl.wistia.com/deliveries/2a2b51173ea21af276f930f6b63d9f480c8abe0a.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
       
+1. <b>Formula</b>
+    i. Suppose the sample space \(S\) can be partitioned into (disjoint) events \(H_1, H_2, \ldots, H_n\).
+        a. Since:
+        $$
+        S = \bigcup_{i=1}^{n} H_i,
+        $$ 
+        b. the event \(A\) is decomposed as:
+        $$
+        A = A \cap S = A \cap \left( \bigcup_{i=1}^{n} H_i \right) =                   \bigcup_{i=1}^{n} A H_i.
+        $$
+            1. note: Some of the intersections \( AH_i \) can be empty
+        c. Since $$\bigcup_{i=1}^{n} AH_i$$ is a disjoint union, and since we can write $$P(AH_i) = P(A|H_i)P(H_i)$$ (provided \(P(H_i) \neq 0\)).
+            1. We have:
+            $$
+            P(A) = \sum_{i=1}^{n} P(AH_i) = \sum_{i=1}^{n} P(A|H_i) P(H_i).
+            $$
       
+  <b> 5. M1.11 - Bayes Formula</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=qmdfyrwxcu"><img src="https://embed-ssl.wistia.com/deliveries/6321fd701a1f974fb79d97c1a22ed85826e4394f.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
       
-      
-      
-      
+1. <b>Formula</b>
+    i. It is important because it updates the probability (Level of certainty) in a particular event of interest, after gathering additional information.
+    ii. Suppose exactly one of the events \(H_1, H_2, \ldots, H_n\) (called hypotheses) can happen. 
+        a.That is,
+        $$
+        S = H_1 \dot{\cup} H_2 \dot{\cup} \ldots \dot{\cup} H_n,
+        $$
+       b. with \(P(H_i) \neq 0, \; i = 1, 2, \ldots, n.\)
+       c. 
+       $$
+       P(H_{i_0} \mid A) = \frac{P(A \mid H_{i_0})                                    P(H_{i_0})}{\sum\limits_{i=1}^{n} P(A \mid H_i) P(H_i)}
+       $$
+       d. another way to use Bayes formula:
+          i. 
+          $$
+          P(H_{i_0} \mid A) = \frac{P(A \mid H_{i_0}) P(H_{i_0})}{P(A)} =                \frac{P(A \mid H_{i_0}) P(H_{i_0})}{\sum\limits_{i=1}^{n} P(A \mid             H_i) P(H_i)}.
+          $$
+
+  <b> 5. M1.12 - Bayes Formula</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-1-learning-materials?module_item_id=14590463&amp;wvideo=qmdfyrwxcu"><img src="https://embed-ssl.wistia.com/deliveries/6321fd701a1f974fb79d97c1a22ed85826e4394f.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b>Example</b>
+    i. A blood test indicates the presence of a particular disease 96% of the time when the disease is actually present. The same test indicates the presence of the disease 1.2% of the time when the disease is not present. One percent of the population actually has the disease. If a person gets tested and the test turns positive (suggesting the disease), what is the probability that the person does have the disease?
+        a. \( D = \) randomly chosen person has the disease \(( = H_{i_0} = H_1) \)
+        b. \( T_+ = \) randomly chosen person gets positive on the test \(( = A) \)
+        c. We need: \(P(D|T_+) = ? \) \(( = P(H_{i_0}| A )) \)
+        d. Given: \( P(T_+ \mid D) = 0.96, \; P(T_+ \mid D^c) = 0.012, \) and that \( P(D) = 0.01. \)
+        e. By the identity \( P(A \mid B) P(B) = P(AB) = P(B \mid A) P(A) \), we have:
+            i.
+            $$
+            P(D \mid T_+) P(T_+) = P(T_+ \mid D) P(D)
+            $$
+        f. and so
+            i.
+            $$
+            P(D \mid T_+) = \frac{P(T_+ \mid D) P(D)}{P(T_+)}.
+            $$
+        f. We know \( P(T_+ \mid D) \) and \( P(D) \), but not \( P(T_+) \). Nevertheless, we do know the probability of \( T_+ \) conditioned on each of the possible events \( D \) and \( D^c \), as well as their probabilities to happen \((P(D^c) = 1 - P(D) = 0.99 \; ( = P(H_2)))\). This means, we can find \( P(T_+) \) by the total probability formula.
+            i. 
+            $$
+            P(T_+) = P(T_+ \mid D) P(D) + P(T_+ \mid D^c) P(D^c)
+            $$
+        g. Substituting in the formula, we get:
+            i. 
+            $$
+            P(D \mid T_+) = \frac{P(T_+ \mid D) P(D)}{P(T_+ \mid D) P(D) +                 P(T_+ \mid D^c) P(D^c)}
+            $$
+            $$
+            = \frac{0.96 \cdot 0.01}{0.96 \cdot 0.01 + 0.012 \cdot 0.99}
+            $$
+            $$
+            \approx 0.4469.
+            $$
+            
+::: {style="text-align: center;"}
+## Week 2
+:::
+
+In this module we discuss independent events, random variables and distributions, histograms and densities, and expected value (mean).
+
+#### Learning Objectives
+
+1. Understand independent events, and their basic properties
+2. Know the difference between discrete and continuous random variable;           probability mass function (pmf) and probability density
+3. Understand the difference between probability histogram (determined by pmf)    and sample histogram
+4. Recognize situations that give rise to binomial random variable
+6. Recognize normal distribution
+7. Understand kernel density estimate (KDE) algorithm as the way of estimating    density from a collected sample
+8. Understand the difference between population mean (expected value) and sample mean
+
+#### Lecture Video Notes
+
+<b> 1. M2.1 - Independent Events </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=s9fr1h3qgi"><img src="https://embed-ssl.wistia.com/deliveries/404ca69d7250f672f58e1684646bd4e1ecc3ad3d.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.2 - Independence of Multiple Events </b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=6nwiabgta4"><img src="https://embed-ssl.wistia.com/deliveries/af5a4c6669521400becf82b6b41533b54903c011.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.3 - Random Variables</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=42sn0qb5f6"><img src="https://embed-ssl.wistia.com/deliveries/36f1e0b2644d6c89836f167c43db99d3df79d23c.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.4 - Probability: Mass Function and Histogram</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=kwrq5519mf"><img src="https://embed-ssl.wistia.com/deliveries/7dbac3753f91eddf28ca6313b4b8712ab6048bf5.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.5 - Binomial RV</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=hqlqt8ijor"><img src="https://embed-ssl.wistia.com/deliveries/71f9332b08814668ed3d887f8e5bbd6d2051df5b.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.6 - Normal RV</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=dqpmduckbv"><img src="https://embed-ssl.wistia.com/deliveries/7a7ac42c9a0b918d7922a1bc03d17b76a9203b3f.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.7 - Normal RV</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=tap53x91t1"><img src="https://embed-ssl.wistia.com/deliveries/23565e535a5e301c02046bd2983a571812f9c623.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.8 - Continuous RV</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=wfeuor0ci5"><img src="https://embed-ssl.wistia.com/deliveries/9abc101b15355acedc928b0df36b9c3adcb84eb8.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.9 - Histograms</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=sc24zos85v"><img src="https://embed-ssl.wistia.com/deliveries/5da9740917e85010f7ce846c63cc12fc3c6041e3.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+<b> 1. M2.10 - Kernel Density Estimate (KDE) RV</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=xbvpah4u8n"><img src="https://embed-ssl.wistia.com/deliveries/47028c09722fe860bf3f90cc10f7fd43e5c59868.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.11 - KDE Example</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=6ak31neeya"><img src="https://embed-ssl.wistia.com/deliveries/5db2d2c807434a99be279ad993c172e53fe20d9c.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
+<b> 1. M2.11 - Population Mean and Sample Mean</b>
+
+::: {style="text-align: center; border: 2px solid black; margin: 1rem;"}
+<p><a href="https://canvas.asu.edu/courses/200987/pages/module-2-learning-materials?module_item_id=14590467&amp;wvideo=s3kk8ib5gv"><img src="https://embed-ssl.wistia.com/deliveries/6b3978f8f722427be071ac79e696be405ac735cd.jpg?image_play_button_size=2x&amp;image_crop_resized=960x608&amp;image_play_button=1&amp;image_play_button_color=8c1d40e0" width="400" height="253.75" style="width: 400px; height: 253.75px;"></a></p>
+:::
+
+1. <b></b>
+
 
 
 
